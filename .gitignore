@@ -1,5 +1,6 @@
 .idea/*
-script/1.js
 .idea/workspace.xml
 *.xml
 .idea/workspace.xml
+node_modules/*
+src/1111.js

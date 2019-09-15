@@ -1,45 +1,21 @@
 (function () {
-    var form = document.getElementById('form');
-
-    var text;
-    var value;
+    var input_value = document.getElementById('calc_input') ;
     var values = [];
     var pattern;
 
     var container = document.getElementById('modal-conteiner');
-    var options = document.querySelector('.options');
-    var option;
-
-    var plus = document.querySelector('.add-phone__btn');
-    var newPhone;
-
-    var close = document.getElementById('close');
 
     var elements = document.querySelectorAll('input');
 
 
-    plus.addEventListener('click', function() {
-        newPhone = document.createElement('div');
-        newPhone.className = 'form-group';
-        newPhone.innerHTML = '<input class="form-item" type="tel">' +
-            '<span class="error__text">* Некорректно введен телефон</span>';
-        plus.parentNode.parentNode.appendChild(newPhone);
-    });
-
-    close.addEventListener('click', function() {
-        container.style.display = 'none';
-        options.innerHTML = '';
-    });
-
     form.addEventListener('change', function(event) {
         var target = event.target;
+        var a = target.value.split(/([0-9]+)([\+|\-|\*|\/]+)/);
+        console.log(a);
 
-        if ( target.name === 'name') {
-            pattern = /^([a-zA-Zа-яА-ЯёЁ\-]+) ([a-zA-Zа-яА-ЯёЁ\-]+)/;
-        } else if (target.type === 'email') {
-            pattern = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z]{2,6})$/;
-        } else if (target.type === 'tel') {
-            pattern = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+        if ( target.name === 'calc') {
+            pattern = /([0-9]+)([\+|\-|\*|\/]+)/;
+        } else {
         }
 
         if (!pattern.test(target.value)) {
@@ -76,23 +52,6 @@
         return data;
     }
 
-    function renderSuccessMode(data) {
-        for (var key in data) {
-            option = document.createElement('div');
-            option.className = 'option';
-            option.innerHTML = '<span class="option__name">' + key + '</span>' +  data[key];
-            options.appendChild(option);
-        }
-    }
-/*
-    form.onsubmit = function (event) {
-        var data = getDataFromInputs(elements);
-        container.style.display = 'block';
-
-        renderSuccessMode(data);
-        return false;
-    }
-  */
     form.addEventListener('submit', function (e) {
         var data = getDataFromInputs(elements);
 
@@ -107,12 +66,12 @@
                     element.value = false;
                 }
             }
-             else {
+            else {
                 container.style.display = 'block';
             }
         }
 
-        renderSuccessMode(data);
+        return(data);
 
     });
 

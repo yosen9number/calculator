@@ -1,0 +1,20 @@
+{
+  "name": "fin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist --presets es2015"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yosen9number/calc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yosen9number/calc/issues"
+  },
+  "homepage": "https://github.com/yosen9number/calc#readme",
+  "devDependencies": {}
+}

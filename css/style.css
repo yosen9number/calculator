@@ -1,6 +1,4 @@
-button:focus {
-    outline: none;
-}
+
 body {
     position: relative;
     min-height: 100vh;
@@ -8,13 +6,12 @@ body {
     padding: 80px 0;
     color: #161a20;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to top left, #2227ae, #5b4fc6);
+    background: linear-gradient(rgb(221, 79, 150) 0%, rgb(56, 70, 159) 85%);
     box-sizing: border-box;
 }
-.reg-form {
+.form {
     width: 450px;
-    min-height: 600px;
-    padding: 30px 30px 60px;
+    padding: 30px;
     margin: auto;
     border-radius: 6px;
     background: #fff;
@@ -23,17 +20,7 @@ body {
 }
 .form-group {
     position: relative;
-    margin-bottom: 25px;
-}
-.required::after {
-    content: '*';
-    position: absolute;
-    right: 0;
-    bottom: 10px;
-    display: block;
-    color: red;
-    font-size: 24px;
-    font-weight: bold;
+    margin-bottom: 30px;
 }
 .title {
     margin: 0 0 40px;
@@ -42,7 +29,7 @@ body {
     line-height: 1.15;
 }
 .form-item {
-    width: 92%;
+    width: 100%;
     padding: 18px 20px;
     margin-right: 15px;
     font-size: 16px;
@@ -55,6 +42,10 @@ body {
     outline: none;
     border: 1px solid #5B4FC6;
     box-shadow: 0 0 1px #5B4FC6;
+}
+.form-item[readonly="readonly"] {
+    outline: none;
+    border: 1px solid #E7EEF5;
 }
 .form-label {
     display: block;
@@ -76,25 +67,6 @@ body {
     color: red;
     font-size: 11px;
 }
-.add-phone__text {
-    margin-bottom: 22px;
-}
-.add-phone__btn {
-    display: inline-block;
-    vertical-align: middle;
-    width: 38px;
-    height: 38px;
-    margin-left: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    color: #161a20;
-    border-radius: 6px;
-    border: 1px solid #b0b7be;
-    background-color: #fff;
-}
-.add-phone__btn:active {
-    border: 2px solid #b0b7be;
-}
 .main__btn {
     display: block;
     border-radius: 100px;
@@ -102,72 +74,27 @@ body {
     height: 58px;
     margin: auto;
     font-size: 16px;
-    line-height: 1.75;
+    line-height: 1;
     cursor: pointer;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
     border: none;
-    background: #FFC638;
+    background: #7F4CA1;
 }
 .main__btn:hover {
-    background: #ffd347;
+    background: #38469F;
 }
 .main__btn:focus {
     outline: none;
 }
 .main__btn:active {
-    background: #B48100;
-
+    background: #38469F;
 }
-.modal__block-page {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-.modal__box {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    display: block;
-    width: 300px;
-    padding: 40px 20px;
-    margin: auto;
-    border-radius: 6px;
-    background: #fff;
-}
-.modal__box .title {
-    font-size: 22px;
-}
-.close__btn {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    padding: 0;
-    border: 0;
-    font-size: 30px;
-    color: #a0a0a0;
-    cursor: pointer;
-    background: none;
-    transform: rotate(45deg);
-}
-.close__btn:hover {
-    color: #787878;
-}
-.close__btn:focus {
-    color: #000000;
-}
-.option {
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-.option__name {
-    margin-right: 6px;
-    font-weight: bold;
+.main__btn[disabled="disabled"],
+.main__btn[disabled="disabled"]:focus{
+    opacity: 0.6;
+    cursor: default;
+    background: #7F4CA1;
 }
