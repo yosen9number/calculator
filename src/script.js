@@ -5,21 +5,30 @@
 
     form.addEventListener("change", function(event) {
         var target = event.target;
-        var a = target.value.split(/([0-9]+)([\+|\-|\*|\/]+)/);
-        console.log(a, a[1].length, a[2].length);
+        let stack = [];
 
-        if (!pattern.test(target.value)){
-            target.classList.add("error");
-        } else if (a[1].length !== ((a[2].length) + 1)){
-            target.classList.add("error");
-        } else {
-            target.classList.remove("error");
-            calcValue.value = calculate(a[1], a[2]);
-            return true;
-        }
+        target.value.split(' ').forEach((token) => {
+            if (token in operators) {
+                let [y, x] = [stack.pop(), stack.pop()];
+                console.log(x, y);
+                stack.push(operators[token](x, y));
+            } else {
+                stack.push(parseFloat(token));
+            }
+        });
+            calcValue.value = stack.pop();
+            console.log(calcValue.value, stack);
     });
 
-    function calculate(operands, operators) {
+    const operators = {
+        '+': (x, y) => x + y,
+        '-': (x, y) => x - y,
+        '*': (x, y) => x * y,
+        '/': (x, y) => x / y
+    };
+
+
+    /*function calculate(operands, operators) {
         let result = Number(operands[0]);
         let operator;
         let firstOperatorsResult = 0;
@@ -53,7 +62,7 @@
             console.log(arrOperators, arrOperands, result);
         }
         return result;
-    }
+    }*/
 })();
 
 
