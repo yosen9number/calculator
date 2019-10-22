@@ -16,5 +16,8 @@
     "url": "https://github.com/yosen9number/calc/issues"
   },
   "homepage": "https://github.com/yosen9number/calc#readme",
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "typescript": "^3.6.4"
+  }
 }

@@ -1,5 +1,6 @@
 (function () {
     var calcValue = document.getElementById("calc_value");
+    var form = document.getElementById("form");
     form.addEventListener("change", function (event) {
         var target = event.target;
         var stack = [];
