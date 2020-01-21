@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/yosen9number/calc#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "browserify": "^16.5.0",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "tsify": "^4.0.1",
+    "typescript": "^3.7.5",
+    "vinyl-source-stream": "^2.0.0"
   },
-  "dependencies": {
-    "typescript": "^3.6.4"
-  }
+  "dependencies": {}
 }
